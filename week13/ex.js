@@ -33,7 +33,7 @@ app.post('/user',(req,res)=>{
 })
 
 app.get('/show', (req,res)=>{
-    db('users')
+    db('public1')
     .select('username')
     .then(data => {
       console.log(data);
@@ -48,7 +48,7 @@ app.get('/show', (req,res)=>{
   app.post('/find', (req,res)=>{
     console.log(req.body);
     const {user} = req.body;
-    db('users')
+    db('public1')
     .select('id','username')
     .where({username:user})
     .then(data => {
